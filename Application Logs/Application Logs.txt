@@ -1,0 +1,35 @@
+Application Logs
+----------------
+-Configure an EC2 instance to use the Amazon Kinesis agent to send logs to an Amazon Kinesis Data firehouse delivery stream.
+-Use AWS Glue to crawl the logs from S3 and generate a schema of the data
+-Use Amazon Athena to query and analyze the log data
+
+Application Logs DIY Activity
+--------------------------------
+-Use AWS Glue to create a new crawler to crawl the Amazon Athena query results
+-Run the AWS Glue crawler to create a new Glue Data Catalog table
+
+###
+This lab can be a little tricky, Stick to the steps and when finished the practice lab and begin the DIY activity, just repeat the last few steps and create a new crawler based off the output of the practice lab
+###
+
+#IPAddr
+54.198.223.118
+#CMD1
+sudo yum install -y https://s3.amazonaws.com/streaming-data-agent/aws-kinesis-agent-latest.amzn2.noarch.rpm
+#CMD2
+sudo sh -c 'cat <<EOF >  /etc/aws-kinesis/agent.json
+{
+  "flows": [
+    {
+      "filePattern": "/var/log/httpd/access_log",
+      "deliveryStream": "delivery-stream"
+    }
+  ]
+}
+EOF'
+#CMD3/4
+sudo service aws-kinesis-agent start
+sudo service aws-kinesis-agent status
+#CMD5
+tail -f /var/log/httpd/access_log

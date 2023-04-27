@@ -1,0 +1,31 @@
+Scenario:
+ Help the amusement park IT staff to add a NoSQL data store to their solution
+
+Action Plan:
+ The vehicle rental application needs to add a NoSQL data store and integrate with Amazon API Gateway and AWS Lambda
+
+API with Databases
+-------------------
+-Create an Amazon DynamoDB table
+-Create an AWS lambda function
+-Store data in the DynamoDB table using the AWS lambda function
+
+API with Databases DIY Activity
+---------------------------------
+-Create a new DynamoDB table called vehicles with the primary partition key: id(string)
+-Modify your lambda function to reference the vehicle table
+-Create a new API Gateway resource for vehicles
+-Create a POST method with lambda proxy integration
+-Deploy the API
+
+
+###
+
+###
+
+#vaildation_form
+<API Gateway invoke URL> / <DynamoDB table name>
+
+
+
+

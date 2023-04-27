@@ -1,0 +1,54 @@
+Scenario:
+ A new company would like to start renting e-vehicles (e-bikes and e-scooters)to the citzens so they can quickly move around the growing city. The owner would like to price the rentals based on current demand. When the demand is normal charge lower prices; when the demand is high (During special events such as the pet parade or the drone acrobatic show) increase prices.
+
+Action Plan:
+ Use an unsupervised ML approach with a Random Cut Forest (RCF) algorithm to solve the prediction problem. Then adjust the hyperparameters to fine tune the model.
+
+Anomaly Detection
+---------------------------
+-Obtain a basic understanding of how the random cut forest (RCF) algorithm works
+-Use Amazon Sagemaker Studio to train and evaluate an RCF model
+-Deploy an inference endpoint to host the model
+-Use AWS Lambda to test the model
+
+
+Anomaly Detection DIY Activity
+---------------------------------
+-Update the model by changing the hyperparameters to use 50 trees and a sample size of 200
+-Deploy a new inference endpoint and reconfigure the AWS Lambda function to use the new endpoint
+-Use AWS Lambda to test the model
+
+###
+In Sagemaker, Return back to your studio notebook, Before beginning we need to tweak the Hyperparameters to fit the use case. Proceed to 
+Code Cell 7 Towards the bottom of the code you will find 'num_samplpesper_tree / num_trees' Reconfigure those parameters and you are good to begin.
+@Code cell 9 the output will be the training job name, Copy to text editor.@Code cell 11 the output will be the Endpoint name, Copy to text editor.
+You will need those two pieces later on in the lab for Validation. Finish up in the notebook and navigate to Lambda, All youy will need to reconfigure is
+the endpoint. Test code, Validate!
+###
+
+#validation_form
+<endpoint name> / <training-job-name>
+
+#DIY_Endpoint_Name
+rcf-endpoint-lab-2022-11-21-18-47-46
+#DIY_Training_Job_Name
+rcf-train-lab-2022-11-21-18-42-13-2022-11-21-18-42-13-707
+
+
+#S3_Bucket_URL_RCF
+s3://anomaly-detection-lab-561798030316/random_cut_forest.ipynb
+#CMD
+aws s3 cp s3://anomaly-detection-lab-561798030316/random_cut_forest.ipynb
+
+#Sagemaker_Endpoint
+rcf-endpoint-lab-2022-11-21-18-21-49
+
+
+
+
+
+
+
+
+
+
