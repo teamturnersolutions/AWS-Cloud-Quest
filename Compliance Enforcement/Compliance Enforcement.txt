@@ -1,0 +1,28 @@
+Compliance Enforcement
+--------------------------
+Use AWS Config, AWS Systems Manager, and AWS Lambda to ensure compliance of EC2 tagging policies 
+and ensure instances have the correct role attached.
+-Create an Automation document within AWS systems Manager
+-Deploy AWS Config and an AWS Config rule(Required-tags)
+-Configure manual remediation
+-Remember the HR-AppServer instance
+
+Compliance Enforcement  DIY Activity
+---------------------------------------
+-Create a new Automation document with AWS Systems Manager
+-Deploy a new AWS Config rule(es2-instance-profile-attached)
+-Apply any remediation required to make the HR-WebServer instance fully compliant
+
+
+Validation Process
+-------------------
+The testing server will query the instance-id of the HR-Webserver EC2 instance to confirm that the right tags and 
+IAM instance profile role have been applied.
+
+Hint:
+In addition to applying remediation based on the new config rule, Remember to also apply remediation to the 
+required-tags Config rule to the HR-Webserver EC2 instance
+
+
+# (HR-AppServer)
+i-0478c18c3028f7fcc

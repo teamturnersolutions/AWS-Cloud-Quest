@@ -1,0 +1,18 @@
+Scenario:
+The island's stabilization system is failing and needs increased reliabilty and availability for its computational modules
+
+Cloud First Steps
+--------------------
+-Launch an EC2 in the 'us-east-1' region
+
+
+Cloud First Steps DIY Activity
+---------------------------------
+-Launch a second EC2 instance in a different AZ in the 'us-east-1' region
+
+
+
+
+###
+
+###
