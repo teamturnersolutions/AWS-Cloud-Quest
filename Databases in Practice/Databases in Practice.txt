@@ -1,0 +1,16 @@
+Scenario:
+ Improve the insurance companys retational database operations, Performance, and availability.
+
+Databases in Practice
+----------------------
+
+
+
+Databases in Practice DIY Activity
+----------------------------------
+
+
+
+###
+
+###

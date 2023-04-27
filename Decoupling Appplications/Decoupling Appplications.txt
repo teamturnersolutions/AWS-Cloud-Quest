@@ -1,0 +1,15 @@
+Decoupling Appplications
+-----------------------------
+Assist space operations with decoupling satelite image applications using microservices and message queues
+
+Practice Lab Goals
+--------------------
+-Create an Amazon SNS topic  -SNS 
+-Create an Amazon SQS queue  -SQS 
+-Subscribe the Amazon SQS queue to the Amazon SNS topic
+
+
+Decoupling Appplications DIY Activity
+--------------------------------------------
+-Create an additional Amazon SQS queue and subscribe it to your exisiting 
+Amazon SNS topic

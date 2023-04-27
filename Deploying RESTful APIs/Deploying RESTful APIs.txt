@@ -1,0 +1,28 @@
+Deploying RESTful APIs
+------------------------
+
+
+Deploying RESTful APIs  DIY Activities
+---------------------------------------
+-Use the sample file vehicle_function.py to create a new lambda function
+-Create a new API Gateway endpoint for vehicles, and integrate it with 
+the new lambda function
+
+Solution Validation Method
+----------------------------
+Validation Process:
+Our test service will make two seperate calls to the API Gateway invoke URL. 
+The first call will be a GET request to the /vehicles URL to retrieve all
+vehicles. The second call will be a GET request to the /vehicles/{id} to 
+retieve the details for a single vehicle.
+ 
+Call one: GET /vehicles
+{
+ [{id:1,...}.{id:2,...}]
+}
+
+Call two: GET /vehicles/1
+{"id":"1","type":"bike","available":"true"}
+
+Enter your API Gateway URL in the test validation screen to confirm. Include
+the /vehicles at the end of the URL.

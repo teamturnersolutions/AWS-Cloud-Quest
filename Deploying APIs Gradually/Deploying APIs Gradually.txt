@@ -1,0 +1,78 @@
+Scenario:
+
+
+
+Deploying APIs Gradually
+--------------------------
+-Use AWS SAM command line tools
+-Create a new AWS SAM project based on templates
+-Build and deploy AWS SAM project
+-Deploy a new AWS Lambda function using a canary deployment strategy
+
+
+Deploying APIs Gradually DIY Activity
+--------------------------------------
+-Change the deployment preference to 'Linear10PercentEvery1Minute'(Step31)
+-Deploy the project by using the new configuration
+#Hello_world_function
+"new_attribute":"I am a linear deployment"
+
+###
+(attempt 1,2&3 Failed) Got to final deployment and both times deployment was not successful
+Eventually, mission success. Careful with following along visually in the documentation, Does not align.
+I took sometime and did some research and eventually got it to work. Need to repeat results before documenting process.
+###
+
+Validation_Form:
+[CodeDeploy Deployment ID]
+d-EAQQ7DS9L
+
+
+#Invoke_URL
+https://j26mcwbl3c.execute-api.us-east-1.amazonaws.com/Prod
+#Project_Name
+MyAPI
+#CMD
+python --versiom
+#CMD
+sam --versiom
+#CMD
+sam init
+#Project_Name
+MyAPI
+#CMD
+cd MyAPI
+#CMD
+sam build
+#CMD
+sam deploy --guided
+#Stack_Name
+MyAPIStack
+#AWS_Region
+us-east-1
+#CMD
+samconfig.toml
+#Hello_world_function
+AutoPublishAlias: live
+DeploymentPreference:
+	Type: Canary10Percent5Minutes
+
+#CMD
+sam validate
+#CMD
+sam build
+#CMD
+sam deploy
+#Hello_world_function
+"new_attribute":"I am a canary deployment"
+#CMD
+sam build
+#CMD
+sam deploy
+#CMD
+
+#CMD
+
+#CMD
+
+
