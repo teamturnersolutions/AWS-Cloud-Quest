@@ -1,0 +1,51 @@
+Scenario:
+ A game studio captures player data from its most successful games. The studio wants to analyze the data to increase revenue from in-game purchases 
+
+Action Plan:
+ Use the AWS Glue built-in transformation 'Relationalize" to flatten the semi-structured data stored in Amazon S3. Query the transformed data in S3 by using Redshift Spectrum in the Redshift data warehouse.
+
+Cloud Data Warehouse
+---------------------
+-Use Amazon Athena to query nested JSON data stored in Amazon S3
+-Create an AWS Glue job to flatten the data, and then use Athena to query the flatten data
+-Use Redshift Spectrum to query the flattened tables in Redshift
+-Create and use a materialized view to query data, and note the faster response time
+
+Cloud Data Warehouse DIY Activity
+---------------------------------
+-Create a materialized view for the total purchases by players (mv_players_purchases_amount)
+-Query the created materialized view to find the total purchases by a player with id 12345
+-Compare the query reponse time to when the materialized view isnt used(Link below for research):
+ <https://aws.amazon.com/blogs/aws/materialize-your-amazon-redshift-views-to-speed-up-query-execution/>
+
+###
+FIrst pass, Unsuccessful. A little confusion but I thought I figured it out. FAILED VALIDATION, Recommend repeat process
+second pass, Unsuccessful validation. I did manage to query the desired information but I must have not done it the way it
+wanted. Unsure how to proceed. Recommend repeat process.
+Alright Let just keep this honest! I must be a fucking idiot, Clearly I am not there yet in terms of my comprehension of complex query design. I want to be but I am not, Not yet atleast. Validation successful. DO NOT OVER THINK IT!!!!!
+###
+
+#validation_form
+<cluster_identifier>
+
+
+#S3_bucket
+consumption-data-636656897582-440
+
+#glue_table
+raw_data_636656897582_440
+
+#redshift_lab_ARN
+arn:aws:iam::636656897582:role/LabStack-6a121405-7b95-4f-redshiftspectrumroleE019-W9ZTT41WSMMP
+
+
+
+
+
+
+
+
+
+
+
+

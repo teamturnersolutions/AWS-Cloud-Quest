@@ -1,0 +1,17 @@
+Scenario:
+The city's surf board shop needs a cost estimation of an architecture with variable resource usage
+
+Cloud Economics
+-----------------
+-Create an estimate of an architecture using the AWS Pricing Calculator
+
+
+Cloud Economics DIY Activity
+-----------------------------
+-Change the EC2 instance type to 't2.micro' and generate a new price estimate URL
+
+
+###
+
+###
+
