@@ -1,0 +1,63 @@
+Playing with Encryption
+--------------------------
+-Create an AWS KMS symmetric encryption key
+-Generate a data key and use it to encrypt and decrypt data
+-Use an AWS KMS key to encrypt and decrypt data directly, Without the need to generate and use a data key
+
+
+Playing with Encryption DIY Activity
+--------------------------------------
+-Create a new AWS KMS multi region symmetric encryption key
+-Enable automatic key rotation for the created AWS KMS multi region key
+
+###
+Repeat of the begin few steps, After key creation is complete, Locate 'Key Rotation' amongst the key config panel and simply check a box and click the savebutton attached to the section. Key ID is located at the top of that page. COpy and proceed to validation stage
+###
+
+#KMSkeyID
+27846f2d-0fc7-461a-aacf-6abfaa910a06
+
+#CMD1
+echo "This is my Secret Text to encrypt." > samplesecret.txt
+#CMD2
+cat samplesecret.txt
+#CMD3
+aws kms generate-data-key --key-id alias/myKMSkey --key-spec AES_256 --encryption-context project=practice --region us-east-1
+#CMD
+echo '13b6+Ij8sJzNjOlop89txnPzuN+0YGRdvsWaUx+iU+Y=' | base64 --decode > datakeyPlainText.txt
+#CMD
+echo 'AQIDAHiDw4ril2hS1U7iaK14qTg4ftwO4FtO6tFbp+arHITKgwF5NpL5uaqifUnxl8Zd1WVAAAAAfjB8BgkqhkiG9w0BBwagbzBtAgEAMGgGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMBBUK3Yij7KHHIjouAgEQgDsxbA55BH4cdPO+13jIGpdQncqJTPQPlq193RNYTnBA6bLrM9/J7j+7vOiGpthflMR0DjxjfH1x1GVV5A==' | base64 --decode > datakeyEncrypted.txt 
+#CMD
+openssl enc -e -aes256 -in samplesecret.txt -out encryptedSecret.txt -k fileb://datakeyPlaintext.txt
+#CMD
+more encryptedSecret.txt
+#CMD
+rm datakeyPlainText.txt
+#CMD
+aws kms decrypt --encryption-context project=practice --ciphertext-blob fileb://datakeyEncrypted.txt --region us-east-1
+#CMD
+echo '13b6+Ij8sJzNjOlop89txnPzuN+0YGRdvsWaUx+iU+Y=' | base64 --decode > datakeyPlainText.txt
+#CMD
+openssl enc -d -aes256 -in encryptedSecret.txt -k fileb://datakeyPlaintext.txt
+#CMD
+echo "New secret file: encrypt without using a data key." > NewSecretFile.txt
+#CMD
+cat NewSecretFile.txt
+#CMD
+aws kms encrypt --key-id alias/myKMSkey --plaintext fileb://NewSecretFile.txt --encryption-context project=practice --output text --query CiphertextBlob --region=us-east-1 | base64 --decode > NewSecretEncryptedFile.txt
+#CMD
+cat NewSecretEncryptedFile.txt
+#CMD
+aws kms decrypt --ciphertext-blob fileb://NewSecretEncryptedFile.txt --encryption-context project=practice --output text --query Plaintext --region=us-east-1 | base64 --decode > NewSecretDecryptedFile.txt
+#CMD
+cat NewSecretDecryptedFile.txt
+
+
+
+
+
+
+
+
+
+

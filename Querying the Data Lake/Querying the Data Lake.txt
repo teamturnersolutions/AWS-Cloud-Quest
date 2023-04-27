@@ -1,0 +1,31 @@
+Scenario:
+ A financial institution has recently implement a data lake to ingest transactions from all across the city. A credit card issuer has begun to send 
+logs of transactions which are being stored in Amazon S3. The financial institutions fraud department wqould like to start analyzing the logs for 
+suspicious transactions and would lile a fast and scalable solution to achieve this.
+
+Querying the Data Lake
+----------------------
+-Run the lambda function to genereate a text file of fake crdit card transactions
+-Create an Athena table from exported text file
+-Query the table for suspected credit card transactions
+-Review the locations of the saved query results
+
+Querying the Data Lake DIY Activity
+-----------------------------------
+-Drop (delete) the sus_transactions table
+
+###
+First attempt, Sloppy and rushed. When dealing with data, Slow down and respect the process
+InAthena, Look for the sus_transaction table at the bottom left panel. With-in the panel, Far right. click the elipse (3 dots). That will open up a menu 
+that will allow you to drop that specific table with out losing the entire query
+###
+
+
+
+
+
+
+
+
+
+

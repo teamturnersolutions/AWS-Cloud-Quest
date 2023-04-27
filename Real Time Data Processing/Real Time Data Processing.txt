@@ -1,0 +1,39 @@
+Scenario:
+ The city administration wants to improve the efficency of its wind farm. When a wind generator in the wind farm fails, it takes a long time 
+to identify the fault, Send a maintance team, and carry out the repair. The administration wants to anticipate possible defects in the wind
+turbines in order to provide preventitive maintance.
+
+Real Time Data Processing
+-------------------------
+-Deploy Kinesis Data Streams to ingest data from streaming data sources
+-Create Jinesis Data Analytics application code using SQL to process incoming streaming data
+-Use Kinesis Data Analytics to write application output records to a configured destination
+
+
+Real Time Data Processing DIY Activity
+--------------------------------------
+-Update Kinesis Data Analytics application to calculate the wind speed average for one of the wind farms
+
+###
+First Pass Impression, Positive. Passed validation, Though I weant to re-run lab a couple more times. Alot of potential in the skills utilized
+in this lab activity.
+###
+
+#validation_form
+<DynamoDB_Table_Name>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

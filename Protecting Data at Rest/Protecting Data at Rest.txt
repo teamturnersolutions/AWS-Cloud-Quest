@@ -1,0 +1,23 @@
+Protecting Data at Rest
+-----------------------
+-Create an AWS KMS customer managed key
+-Create a snapshot of an application server
+-Encrypt the snapshot of the application server
+-Create an Amazon Machine Image (AMI) from the encrypted snapshot
+
+Protecting Data at Rest DIY Activity
+-------------------------------------
+-Enable KMS key rotation on your Customer managed key
+-Create a new EBS volume that is encrypted with your customer managed key
+
+
+###
+The first part, Navigate to KMS and locate the CMK you created in the lab and like previous lab locate 'Key Rotation" in the config panel and 
+save. The second part was completed during the lab. So as long as it was done correctly Validation will be successfull
+###
+#UnenryptedPublicIPv4
+54.146.35.247
+#EncryptedPublicIPv4
+44.199.193.126:8443
+
+

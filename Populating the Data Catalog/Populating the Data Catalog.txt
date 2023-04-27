@@ -1,0 +1,31 @@
+Scenario:
+ A pharmacy chain recently built a data lake on AWS. The pharmacy seeks a solution that will automatically organize the data lake, support schema 
+evolution, and keep a history of changes.
+
+Populating the Data Catalog
+---------------------------
+-Use AWS Glue to create a database in the Data Catalog
+-Use an AWS Glue crawler to create a table in the Data Catalog
+-Use Athena to query data in the catalog
+-Run the inventory management application to ingest new inventory data with added cloumns
+-Run the crawler again an perform an Athena query to check the new table
+
+Populating the Data Catalog DIY Activity
+-----------------------------------------
+-Update the 'product id' data type in the inventory table from 'bigint' to 'string'
+-Validate the updated data type in the AWS Glue Data Catalog and in Amazon Athena
+
+
+###
+Successful Validation, Unhappy with results. Recommend re-execution
+###
+#validating_form
+<Database_name> / <table_name>
+
+
+
+
+
+
+
+
