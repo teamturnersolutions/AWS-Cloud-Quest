@@ -1,0 +1,12 @@
+IAMSecurity Policies
+--------------------
+-Troubleshoot application errors regarding s3 bucket access
+-Fix the policies of the application server to allow access to an s3 bucket
+-Upload a file to the application to test the new permission policy
+
+
+IAM Security Policies DIY Activity
+----------------------------------
+-Troubleshhot the compliance officers application errors
+-Fix the resources in the IAM policy associeated with the compliance server
+-Add the DELETE permission to the policy

@@ -1,0 +1,35 @@
+ServerlessFoundations
+---------------------
+Help the amusement park IT Department to run code without provisioning a server
+
+
+
+ServerlessFoundations DIY Activities
+--------------------------------------
+-Modify the lab's AWS lambda function code to display differnt feeling values based on the emoji type value
+in the JSON element.
+
+Validation Process:
+Test servers will transmit a JSON object to your lambda function containing the emoji_type identification element
+and a random message.
+
+{
+"emoji_type":0,
+"message":"I love this park!"
+}
+
+Update the lambda function using the following rules:
+emoji_type=0, retruns feeling:"positive"
+emoji_type=1, retruns feeling:"neutral"
+emoji_type= any other value then 0 and 1, returns feeling:"negative"
+
+Lambda function return:
+{
+ "feeling":"positive",
+ "message":"I love this park"
+}
+
+Hints:
+-Update the if-else block to add a feeling attribute(positive,neutral,negative)
+-Change the resource code to add the feeling attribute instead of custom message
+-Look at step 11 from earlier if needed

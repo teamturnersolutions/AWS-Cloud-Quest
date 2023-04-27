@@ -1,0 +1,45 @@
+Scenario:
+Help the Coder Campus team to create a cloud development environment with source code repository
+
+Setup a Cloud Development Environment
+---------------------------------------
+-Deploy an AWS Cloud9 environment
+	name: Coders Campus First Day
+	Desc: Project Coders Campus First Day
+-Explore the AWS Cloud9 IDE
+-Debug Python code using the AWS Cloud9 IDE
+-Push changes to AWS CodeCommit
+
+Setup a Cloud Development Environment DIY Activity
+---------------------------------------------------
+-Add missing code to upload_file function in the Python file
+and push the changes to CodeCommit
+
+###
+Attemp:1 Unable to complete. Every attempt was unsuccessful. FAILED
+Attemp:2 At the bash, 'pip install path.py' This will allow you to run the os.path module found with in the code snippit on 'https://boto3.amazonaws.com/v1/documentation/api/latest/guide/s3-uploading-files.html'.
+This one is tricky, The hardest I have encountered. WORTH IT, Figure it out!
+###
+#RefSite
+https://boto3.amazonaws.com/v1/documentation/api/latest/guide/s3-examples.html
+
+
+#GitRepo
+git clone https://git-codecommit.us-east-1.amazonaws.com/v1/repos/lab
+#CMD1
+sudo pip3 install -r lab/requirements.txt
+#CMD2
+sudo pip install path.py
+#CodeTemplate
+  # If S3 object_name was not specified, use file_name
+    if object_name is None:
+        object_name = os.path.basename(file_name)
+
+    # Upload the file
+    s3_client = boto3.client('s3')
+    try:
+        response = s3_client.upload_file(file_name, bucket, object_name)
+    except ClientError as e:
+        logging.error(e)
+        return False
+    return True

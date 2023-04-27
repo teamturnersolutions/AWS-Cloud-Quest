@@ -1,0 +1,43 @@
+Setup ML Environment
+---------------------
+-Deploy an Amazon Sagemaker domain
+-Launch a Sagemaker Studio machine learning (ML) environment
+-Clone a GIT hub repository of sample ML projects
+-Upload and walkthrough a sample ML project
+-Configure and test a Lambda function to call a sagemaker endpoint
+
+
+Setup ML Environment DIY Activity
+----------------------------------
+-Create a new inference endpoint using an instance type of ml.m5.xlarge
+-Re-run the lambda function using the newly created endpoint
+
+#Validation/endpoint-name
+<endpoint-name>
+
+###
+In Sagemaker, Open Studio created during the lab and scroll down till you locate this snippet of code in your notebook (predictor = m.deploy(initial_instance_count=1, instance_type="ml.m4.xlarge")) and change 'm4' to 'm5'
+and press Shift+Enter to run. Return to the previous tab, Sagemaker, Left Column look for Inference/Endpoints. Your provisioned endpoint will be creating
+just wait till status says 'inService'. Copy the name and Vavigate to Lambda, Locate the configuration tab and delete the exisiting endpoint and paste your newly created endpoint. Then run a quick test on the code to make sure configurations were correct. 
+Move to Validation once complete, You will need the name of the New instance to Validate.
+###
+
+#CMD
+whoami
+pwd
+ls
+git clone https://github.com/aws/amazon-sagemaker-examples.git
+
+#Endpoint
+mxnet-training-2022-11-19-18-28-31-465
+
+
+
+
+
+
+
+
+
+
+

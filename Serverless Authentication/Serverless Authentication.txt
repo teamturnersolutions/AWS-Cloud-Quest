@@ -1,0 +1,55 @@
+Serverless Authentication
+---------------------------
+-Deploy the backend application using AWS Cloud9 and AWS SAM
+-Configure an Amazon Cognito user pool
+-Build the frontend application using AWS Cloud9
+-Deploy the frontend application using AWS Amplify
+-Creaste a user account
+-Login and create items in the application
+
+
+Serverless Authentication DIY Activity
+----------------------------------------
+-Add a AWS Lambda function to the Cognito user pool to remove the validation code process
+
+
+###
+Review step 36. The first trigger, Pre sign-up, CLick the drop down menu and 
+locate 'preSignHandlerLambdaFunction' and then scroll down to the bottom of
+the page and save. For validation you will need the User pool name which is located on the screen 
+after saving at the top right
+###
+
+#S3 Bucket
+resource-bucket-636656897582-83
+
+#Cloud9
+#CMD1
+aws s3 cp s3://resource-bucket-636656897582-83/app-code.zip .
+#CMD2
+unzip app-code.zip
+#CMD3
+sam deploy
+#CMD4
+cd ~/environment/app-code/frontend
+#CMD5
+npm install
+#CMD6
+npm run build
+#CDM7
+cd dist
+#CDM8
+zip -r bookmarkapp.zip *
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,21 @@
+feeling = {"positve: ":0, "neutral: ":1, "negitive: ":2]
+emoji_type = event[feeling + "emoji_type"]
+message = event["message"]
+
+print(emoji_type)
+print(message)
+print(feeling)
+
+custom_message = None
+
+if emoji_type == 0:
+	custom_message = feeling + "positive: " + message
+elif emoji_type == 1:
+	custom_message = feeling + "neutral: " + message
+else:
+	custom_message = feeling + "negative: " + message
+response = {	
+	"message": message,
+	"custom_message": custom_message,
+}
+return response
