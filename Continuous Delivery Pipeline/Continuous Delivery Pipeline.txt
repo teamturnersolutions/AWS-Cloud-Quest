@@ -1,0 +1,57 @@
+Scenario:
+
+
+
+
+Continuous Delivery Pipeline
+----------------------------
+-Create an AWS CodeCommit repository
+-Use AWS Cloud9 and the AWS SAM command line to create a new serverless application
+-Create a build specification for AWS CodeBuild
+-Create a continuous delivery pipeline by using AWS CodeBuild
+-Push code changes to the repository, which invokes the deployment pipeline
+
+
+Continuous Delivery Pipeline DIY Activity
+------------------------------------------
+-Configure an additional action in the deploy stage for manual approval (https://docs.aws.amazon.com/codepipeline/latest/userguide/approvals-action-add.html)
+Return to your pipeline, Click EDIT and in the deploy stage click 'add action'
+
+#validation_form
+[name_of_pipeline ]
+#S3_Bucket
+newlabsam
+#cloudformation_output
+https://aouibwoek0.execute-api.us-east-1.amazonaws.com/Prod/hello/
+
+###
+Multiple initial attempts a failure, Fails at the build stage. Recommend taking a step back and rethink strategy
+Identified Issue in instruction, Though any rookie should pick it up. During command 'git add .', Ensure you are in the correct directory that you are instructing 
+git to currently use with the "." arguement
+###
+
+#CodeCommit
+https://git-codecommit.us-east-1.amazonaws.com/v1/repos/my-repository
+
+#CMD
+git clone https://git-codecommit.us-east-1.amazonaws.com/v1/repos/my-repository
+#CMD
+cd my-repository
+#CMD
+
+#CMD
+
+#CMD
+
+
+
+
+
+Continuous Delivery Pipeline:
+	step_18- (Possible Addition)
+         Note to user: Ensure you are in the correct working directory before issueing the 'git add .' command. Not doing so will result to 'BUILD FAILED'
+
+
+
+
+

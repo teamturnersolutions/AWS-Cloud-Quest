@@ -1,0 +1,14 @@
+Scenario:
+ Help improve security at the city's stock exchange by ensuring that support engineers can only perform authorized actions.
+
+Core Security Concepts
+----------------------
+
+
+Core Security Concepts DIY Activity
+------------------------------------
+
+
+###
+
+###

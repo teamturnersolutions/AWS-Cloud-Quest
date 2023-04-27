@@ -1,0 +1,44 @@
+Customer Sentiment
+------------------
+-Use the Amazon Comprehenad AI service to analyze text content
+-Configure AWS Lambda to make an API call to Amazon Comprehend to perform sentiment analysis of text files
+-Configure Amazon S3 and add an event notification feature to trigger the Lambda function for a PUT event
+-Validate the analyzed file recieved in the output S3 bucket
+
+
+Customer Sentiment DIY Activity
+---------------------------------
+-Update the AWS Lambda code to run sentiment analysis on french text (Langauge code = fr)
+-Upload the sample CSV file (sample_customer_review_fr.csv) into the S3 bucket
+-Validate that the analyzed file recieved in the S3 bucket contains the sentiment for each line of the file
+
+###
+In Lambda, you need to change the labFunction code to represent French instaed of english <en -to- fr> then configure the lambda s3 trigger 
+to represent csv. instead of .tsv. Also, while still in lambda you need to reconfigure the testEvent for the new file that your testing, in this case  
+sample_cust_rev_fr. Once those are complete, move to s3 and upload the lab file just named. Return back to lambda and then trigger the test event.
+Navigate to Amazon Comprehend/analyze jobs, It will take about 10 minutes for the job to complete, Once in complete status proceed to S3 and copy the 
+names of the input and output buckets used in the lab and copy to text editor, You will need that information for Validation
+
+###
+
+
+
+#S3Bucket
+amazon-comprehend-input-bucket-230291771281
+
+#Sample_File for Step 5
+Hello, I am Paulo Santos. I used my credit card account 1111-0000-1111-0000 to purchase a microwave oven on Jan 1, 2022. I received the unit and when I opened it, it appeared used. I feel that this was shipped by mistake. I am not happy. Can you resend me the new microwave to 123 Any Street, Seattle, WA 98109. I feel I am losing trust and if someone can reach out to me with an explanation, that is even better.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
