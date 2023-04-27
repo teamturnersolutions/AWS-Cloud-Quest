@@ -1,0 +1,51 @@
+Sccenario:
+ The bank would like to increase the number of online transactions customers can review from 6 months to five years. In addition, The online bank
+statements must support textual searches for all fields in the statement.
+
+Action Plan:
+ Deploy an OpenSearch domain to index bank transactions generated from upstream on-premise applications into the OpenSearch domain.
+
+Documents Indexing and Search
+-----------------------------
+-Deploy and configure an OpenSearch domain
+-Create an ETL job using Glue Studio
+-Configure an ETL script to ingest S3 data in OpenSearch
+-Use the OpenSearch Dashboards to call the search API to query data from the OpenSearch domain
+
+Documents Indexing and Search DIY Activity
+-----------------------------------------
+-Change "balance" column to "account_balance", and "amount" to "transaction_amount" on your ETL job
+-Remove the column k_symbol to avoid it from being indexed
+-Change the index name(ie: new-index), and re-run the job
+
+###
+This lab is cloned from the new game Industry Quest or vice versa, Either way I had done this lab before so I was able to breeze thru it the first time. Though I did experience a fault while trying to run a query from the EC2 instance directly via the banking application, Running the query thru kabana gave me no issue's. I experienced this issue before, I believe the issue lies on the server side because subsequent attempts while replicating the process   had been successfull
+###
+
+#validation_form
+<Domain Name> / <Index Name>
+
+
+
+
+#S3_Bucket
+ingestion-bucket-230291771281-us-east-1
+
+#S3_Bucket_ingestion-bucket_elasticsearch-hadoop_URI
+s3://ingestion-bucket-230291771281-us-east-1/elasticsearch-hadoop-7.8.0.jar
+
+#S3_Bucket_ingestion-bucket/input_URI
+s3://ingestion-bucket-230291771281-us-east-1/input/
+
+
+
+
+
+
+
+
+Services Used
+---------------------
+S3 
+Glue
+OpenSearch Service

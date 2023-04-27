@@ -1,0 +1,35 @@
+Scenario:
+ Our city taxi service collects and stores large amounts of data. We'd like to use the data to improve our service and be morew efficent. We want to use
+Amazon EMR. with Apache Spark, To process the data stored in S3. After the data is processed, Our anaylysts can use Athena to query it with the help of Glue.
+ Action Plan:
+ Use S3 and EMR to process taxi service data. After it is processed, use AWS Glue and Athena to queery the data for insights
+
+Distributed Large Scale Data Processing
+----------------------------------------
+-Create an EMR cluster
+-Import an EMR notebook and attach it to the cluster
+-Run the code in the notebook to process the data using Apache Spark
+-Create an AWS Glue table so that the data can be queried outside of the cluster
+
+Distributed Large Scale Data Processing DIY Activity
+----------------------------------------------------
+-Increase the size of the cluster
+-Re-run the code in the notebook
+-Note the time differences to complete the queries
+
+###
+FIrst Pass, I went ahead and tried to include the DIY portion into the lab. Not sure if this was the cause but while running my jupyter notebook I incurred  a task failure. Recommend Re-run of lab as Instructed exactly.
+Scond Pass, Task Failure. I took it slow this time and attempted to follow meticulously but still incurred task failure. Unclear at this point where I am going wrong. I have to be missing an important configuration or the instructions are off. The user lab doesn't line up to the configurations of the platform lab settings. I noticed two instances where the misalignment occured but I dismissed it. Recommend taking a step back and re-attempting with clear eyes.
+NOTE: While I signed in to the game server , It did mention they were experiencing issue's with thier ML services, Could be the reason for the unexplained issues presented during the lab. Unclear at this point.
+Quick Update: Unclear at this point why I experienced failure ladt run but this run went through. I did input lab name's incorrectly though unsure how that would impact the lab at the step I was at, I presume it would have just excepted the new name as an input variable and keep it moving but still investigating.
+Successful validation, Issue's did not persist, though small configuration changes were made that should not have impacted results. Recommend re-running lab with prior configurations to test possible platform issue that has cleared to gain insight.
+###
+
+#validation_form
+
+
+#S3_Bucket
+fare-data-636656897582-us-east-1
+
+#Cluser_ID
+j-3EPCVBGHQYI5G

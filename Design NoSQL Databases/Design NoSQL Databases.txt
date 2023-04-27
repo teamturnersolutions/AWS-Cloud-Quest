@@ -1,0 +1,45 @@
+Scenario:
+ Help the island Gamers CTO to improve the performance of the top players scoreboard.
+
+Design NoSQL Databases
+-----------------------
+-Inspect the Amazon DynamoDB table structure that holds player scores and awards
+-Fetch player scores using an Amazon DynamoDB query
+-Fetch the player that has the champs badge using Amazon DynamoDB scan
+-Create a DynamoDB index to optimize the Champs badge search
+-Fetch the player that has the champs badge using a newly created DynamoDB index
+
+
+Design NoSQL Databases DIY Activity
+------------------------------------
+-Create an additional Global Secondary index
+-Use the correct partition key(game) and sort key(score)
+
+#DIY_secondary_index
+game-score-index
+
+###
+After lab execution, DIY doesnt need explanation, Create as you did in lab. Click,input,input,click and wait. As easy as that
+###
+
+#CMD
+git clone https://git-codecommit.us-east-1.amazonaws.com/v1/repos/dynamoDB-tests
+#CMD
+cd dynamoDB-tests
+#CMD
+sudo pip3 install -r requirements.txt
+#CMD
+
+#CMD
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,29 @@
+Edge Protection
+----------------
+-Use AWS WAF to create a web application firewall and configure a web access control list (web ACL)
+-Configure a AWS managed rule in the web ACL
+-Configure a custom rule in the web ACL
+-Create an Amazon CLoudfront distribution, and then associate the web ACL to the Cloudfront distribution
+-Verify that AWS WAF protects the application server from attack
+
+
+Edge Protection DIY Activity
+-----------------------------
+-Add a SQL database managed rule in AWS WAF
+-Validate that the SQL injection attacks are blocked by the new rule
+
+#CMD!
+export BookClub_URL=ec2-54-198-97-187.compute-1.amazonaws.com
+#CMD2
+curl -d 'user=<script><alert>Hello World></alert></script>' $BookClub_URL
+#CMD3 
+curl -H 'X-Book-Attack:Comics' $BookCLub_URL
+#CMD4
+export Protected_BookClub_URL=https://d74i6064ibu0r.cloudfront.net
+#CMD5
+curl -d 'user=<script><alert>Hello World></alert></script>' $Protected_BookClub_URL
+#CMD6
+curl -H 'X-Book-Attack:Comics' $Protected_BookCLub_URL
+
+#CFDistroDomainName
+https://d74i6064ibu0r.cloudfront.net
