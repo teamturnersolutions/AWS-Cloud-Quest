@@ -1,0 +1,17 @@
+Scenario:
+ Help the package delivery company speed up data ingestion and transformation.
+
+Data Ingestion Methods
+-----------------------------
+Use Amazon Kinesis Data Firehose, Amazon Kinesis Data Analytics. and AWS Lambda to iungest, transform and analyze 
+real-time data.
+
+Data Ingestion Methods DIY Activity
+--------------------------------------
+Configure the application to send real-time analytics results to an AWS Lambda
+function to populate a Dynamo DB table
+
+
+###
+
+###

@@ -1,0 +1,41 @@
+Scenario:
+ A supermarket analytics team would lile to run some on-demand queries on the sales tables without overloading the OLTP database.
+
+Daily Batch Extraction
+-----------------------
+-Create a Glue crawler to create databases and tables from the Aurora MySQL cluster using JDBC connections
+-Use Glue Studio to create Glue Jobs to ingest customers table data from the Glue Data catalog
+-Run the Glue Job to create a customers table in Glue Data catalog
+-Use Amazon Athena to access the data from the customers table
+
+Daily Batch Extraction DIY Activity
+------------------------------------
+-Use Glue Studio to create Glue Jobs to ingest transaction table from Data Catalog
+-Run the Glue Job to create a transaction table in Glue Data Catalog
+-Use Amazon Athena to access the data from the transaction table
+
+
+
+###
+First Pass Impressions:
+ Intrigued, This is a fairly simple yet complex task that I really want to understand more. Furthur investigation required
+Slowly running out of time for second pass, Unable to complete DIY at this time. AWS Glue is an extremely intriguing service th
+deserves furthur exploration and discovery. Yet to fully grasp its entirety, Looking forward to next attempt.
+Second Pass Impressions:
+ Successful validation, gained more insight into the process. Feel like a could do it a dozen more times before I fully grasp and master.
+As Far as DIY Lab, Follow the Instructions from the Lab, And use the Transaction table instead of customer sales.
+###
+#validation_from
+<database_name> / <transaction_table_name>
+
+
+#secrets_manager_PW
+SmmhBGtr0A4Fm^eVlAEk4M6,4X3qrl
+
+
+
+
+
+
+
+

@@ -1,0 +1,31 @@
+Scenario:
+ An e-commerce store has a hig-amount of cart abandonment on a daily basis, and they end up deleting these records froms the database to save storage 
+space. The IT manager has asked us to find a cost-effective storage solution to store these records and allow the e-commerce store to perform analytic
+processesing directly on the storage solution.
+
+Data Lakes
+-----------
+-Use S3 as the storage layer of your data lake
+-Configure an S3 event notification to invoke an AWS lambda function
+-Create a Eventbridge rule to invoke a lambda function
+
+
+Data Lakes DIY Activity
+------------------------
+-Create a second eventbridge rule to invoke the labfunction-DIY-processor lambda function
+-Update the labfunction-DIY-processor lambda function's environment variables with the S3 bucket names created in the lab
+-Invoke the labfunction-Data-Generator lambda function and verify a new .csv file was created in the consumption zone S3 bucket
+
+
+###
+Pretty straight forward, Repeat lab steps, Replacing DIY-Lambda function with labFunctionProcessor.
+
+###
+
+#validation_form
+<S3_consumption_Bucket>
+
+
+
+
+
