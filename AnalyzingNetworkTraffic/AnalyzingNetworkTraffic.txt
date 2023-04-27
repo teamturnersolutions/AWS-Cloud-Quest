@@ -1,0 +1,30 @@
+Scenario:
+ Help the farming Co-Op analyze their network logs to find possible security flaws
+
+Action Plan:
+ Change the VPC network ACL rules to reject inbound and outbound traffic from a specific IP address
+
+AnalyzingNetworkTraffic
+----------------------------
+-Setup VPC flow logs
+-Analyze traffic within a VPC
+-Reject inbound traffic using a network ACL list
+
+AnalyzingNetworkTraffic DIY Activities
+-----------------------------------------
+-Reject outbound traffic using a network ACL(Nacl)
+
+
+###
+
+###
+
+#validation_form
+<VPC ID>
+
+
+-S3ARN --arn:aws:s3:::vpc-flowlogs-1001
+-my-flowlog-1001 --fl-0cfb1889f39a4b5e7
+-my-blocked-flowlog-1001 --fl-0c640b543775efe7f
+
+
