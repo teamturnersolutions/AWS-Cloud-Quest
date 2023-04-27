@@ -1,0 +1,16 @@
+Scenario:
+Help the bank setup a secure networking environment which allows communication between resources and the internet
+
+Networking Concepts
+-------------------
+-Change the Web Server subnet from private to public
+-Configure a security group to allow HTTP traffic from the internet
+
+Networking Concepts DIY Activity
+---------------------------------
+-Change the security group rules to allow traffic over port 3306 into the Database Server
+
+
+###
+
+###

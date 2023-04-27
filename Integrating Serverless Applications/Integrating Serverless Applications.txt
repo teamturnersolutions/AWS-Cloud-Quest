@@ -1,0 +1,48 @@
+Scenario:
+
+
+
+
+
+Integrating Serverless Applications
+------------------------------------
+-Create an Amazon SQS queue
+-Create Python code to send a message to an Amazon SQS Queue
+-Configure a trigger to call an AWS Lambda function when messages are available in the queue
+-Store messages in DynamoDB
+-Simulate an error processing the message
+
+
+
+Integrating Serverless Applications DIY Activity
+---------------------------------------------------
+-Create an Amazon SQS dead-letter queue for error handling
+
+#validation_form
+{Processing Queue URL}
+{Dead-letter Queue URL}
+
+
+
+###
+Create another queue the same way lab queue was created and give it a logically representitive name ie. dlqxxxxxxx, but configure dead letter queue seeting to enable and choos the lab queue and then save.
+You'll need the URL from both queue's to validate.
+###
+
+
+#MyMessageQueueURL
+https://sqs.us-east-1.amazonaws.com/356536493424/MyMessageQueue
+
+
+
+
+
+
+
+
+
+
+
+
+
+

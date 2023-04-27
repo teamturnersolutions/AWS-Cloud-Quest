@@ -1,0 +1,24 @@
+Infrastructure as Code
+-------------------------
+-Provision AWS resources by using an AWS Cloudformation template
+-Review the concept of drift detection in cloudformation
+-Simulate drift by adding a rule to a security group
+-Review how to detect and remediate drift by using an AWS lambda function
+-Craete an Amazon Eventbridge schedule to run the lambda function
+
+
+Infrastructure as Code DIY Activity
+-------------------------------------
+-Modify the AWS Lambda function to detect and remediate changes to the Amazon EC2 
+instance profile
+-Simulate drift by changing the EC2 instance profile assigned
+-Verify that the updated lambda function corrects the drift
+
+###
+DIY is simple, Return to lambda and uncomment a portion of the code at the very bottom and 
+WATCH your spacing. Will only validate if the code is proper(Look to the above portion
+of the lambda function that identifys the roll back of the security group for any hint2)
+###
+
+#Object URL
+https://resource-bucket-888748678182-729.s3.amazonaws.com/sample-cloudformation.yaml

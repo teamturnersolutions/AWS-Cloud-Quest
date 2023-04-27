@@ -1,0 +1,31 @@
+Lambda Security
+-----------------
+-Create an AWS Lambda function, asnd then configure it to connect to a Virtual Private Cloud (VPC)
+-Retrieve database credentials from AWS Secrets Manager to access an Amazon RDS database through the 
+lambda function
+-Create a gateway VPC endpoint to access an Amazon S3 bucket through the lambda function
+
+
+
+Lambda Security DIY Activity
+-----------------------------
+-Update the custom Amazon RDS query in the lambda_function code to find all people records with data
+scientist as the occupation
+-Upload the new query results into the provided DIY Amazon S3 bucket
+-Run the Lambdaa function test event again
+-Check that the new query results have been uploaded into the new DIY Amazon S3 bucket
+
+###
+DIY activity is the repeat of the last few steps. Put simply, Replace a few keywords in the labFunction.py lambda code that directs the query to look in
+the database for 'data scientist' and then redirect it to the DIY bucket required for the DIY Activity
+###
+
+#SecretARN
+arn:aws:secretsmanager:us-east-1:230291771281:secret:LabDatabaseSecretBFE319E83f-R02FKoVSyCZA-JoLnZo
+#S3 Bucket
+lambda-security-230291771281-506-practiceInfo
+
+
+
+
+

@@ -1,0 +1,170 @@
+Scenario:
+
+
+
+
+Orchestrate Serverless Workflows
+---------------------------------
+-Create a state machine using AWS Step Functions
+-Learn how to use Amazon S3 event configuration to invoke an AWS Lambda function
+-Use AWS Lambda function to start the state machine
+-Use state type Parallel to invoke two tasks at the same time
+-Configure tasks to invoke AWS Lambda functions
+-Use the AWS Step Functions service integration to persist data in a Dynamo DB table
+
+
+
+Orchestrate Serverless Workflows DIY Activity
+---------------------------------------------
+-Create an Amazon SQS queue
+-Configure the "SendToQueue" state in the state machine
+-Send a message to the queue (Use the Step Functions integration with Amazon SQS)
+
+
+
+
+###
+First attempt a loss. Unsure how to proceed so research is required. Began to lookout the structure of Amazon State Langauge. Believe the solution may need
+to be implemented into the architecture at init. Next attempt will follow
+So subsequent attempts resulted to successful validation buy, and this is a BIG but! Positive sentiment is not being saved into DynamoDB table. Strange. Need to Re-evaluate 
+###
+
+
+
+#ProcessS3_ARN
+arn:aws:lambda:us-east-1:230291771281:function:process_s3_event
+#Rekognition_ARN
+arn:aws:lambda:us-east-1:230291771281:function:rekognition_helper
+#Comprehend_ARN
+arn:aws:lambda:us-east-1:230291771281:function:comprehend_helper
+#S3_Bucket
+labosw
+#CMD
+git clone https://git-codecommit.us-east-1.amazonaws.com/v1/repos/lab
+#StateMachine_ARN
+arn:aws:states:us-east-1:230291771281:stateMachine:MyStateMachine
+#SQS_URL
+#Step_function.json
+{
+  "Comment": "A Hello World example of the Amazon States Language using Pass states",
+  "StartAt": "Parallel State",
+  "States": {
+    "Parallel State": {
+      "Type": "Parallel",
+      "ResultPath": "$.analysis",
+      "Branches": [
+        {
+          "StartAt": "EvaluateImageContent",
+          "States": {
+            "EvaluateImageContent": {
+              "Type": "Task",
+              "Resource": "<REPLACE WITH THE LAMBDA ARN>",
+              "End": true,
+              "InputPath": "$.s3_info",
+              "ResultPath": "$.result.image_analysis",
+              "OutputPath": "$.result"
+            }
+          }
+        },
+        {
+          "StartAt": "EvaluateMessageContent",
+          "States": {
+            "EvaluateMessageContent": {
+              "Type": "Task",
+              "Resource": "<REPLACE WITH THE LAMBDA ARN>",
+              "End": true,
+              "InputPath": "$.message",
+              "ResultPath": "$.result.message_analysis",
+              "OutputPath": "$.result"
+            }
+          }
+        }
+      ],
+      "Next": "ModerateOrNotModerate"
+    },
+    "ModerateOrNotModerate": {
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Or": [
+            {
+              "Variable": "$.analysis[0].image_analysis.safe_content",
+              "BooleanEquals": false
+            },
+            {
+              "Variable": "$.analysis[1].message_analysis.sentiment ",
+              "StringEquals": "NEGATIVE"
+            },
+            {
+              "Variable": "$.analysis[1].message_analysis.sentiment ",
+              "StringEquals": "NEUTRAL"
+            },
+            {
+              "Variable": "$.analysis[1].message_analysis.sentiment ",
+              "StringEquals": "MIXED"
+            }
+          ],
+          "Next": "DoSomeModeration"
+        }
+      ],
+      "Default": "ShowComment"
+    },
+    "DoSomeModeration":{
+      "Type": "Pass",
+      "Next": "IntoDynamoDB"
+    },
+    "ShowComment":{
+      "Type":"Pass",
+      "Next": "SendToQueue"
+    },
+    "SendToQueue":{
+      "Type": "Pass",
+      "Next":"Send message to SQS"
+    },
+    "Send message to SQS":{
+      "Type": "Task",
+      "Resource": "arn:aws:states:::sqs:sendMessage",
+        "Next":"IntoDynamoDB"
+        "OutputPath": "$"
+        "ResultPath": "$.queue.response",
+	"Parameters": {
+            "QueueUrl":"https://sqs.us-east-1.amazonaws.com/230291771281/SendToQueue",
+            "MessageBody":"$"    
+    },
+    "IntoDynamoDB": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::dynamodb:putItem",
+        "OutputPath": "$.result"
+        "ResultPath": "$.result.message_analysis",
+	"Parameters": {
+        "Item": {
+          "id.$": "$$.Execution.Name",
+          "comment.$": "$.message.content",
+          "bucket.$": "$.s3_info.bucket",
+          "key.$": "$.s3_info.key",
+          "safe_content": {"BOOL.$": "$.analysis[0].image_analysis.safe_content"},
+          "sentiment.$": "$.analysis[1].message_analysis.sentiment"
+        }
+      },
+      "End": true
+    }
+  }
+}
+
+
+
+
+"Send message to SQS":{  
+         "Type":"Task",
+         "Resource":"arn:aws:states:::sqs:sendMessage.waitForTaskToken",
+         "Parameters":{  
+            "QueueUrl":"https://sqs.us-east-1.amazonaws.com/230291771281/SendToQueue",
+            "MessageBody":"$"           }
+
+
+
+
+
+
+
+
