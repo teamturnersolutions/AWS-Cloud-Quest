@@ -1,0 +1,32 @@
+Securing APIs
+-----------------
+-Validate that Amazon API Gateway can invoke an AWS Lambda function
+-Configure an Amazon Cognito user pool
+-Configure an authorizer and attach it to an Amazon API Gateway method
+-Obtain and define Amazon Cognito user pool token
+-Use the Amazon Cognito user pool ID token to access your API in Amazon API Gateway
+
+
+Securing APIs DIY Activity
+----------------------------
+-Configure Amazon API Gateway to integrate with the DIY AWS Lambda function
+-Use the Amazon Cognito user pool ID token to access your API in Amazon API Gateway,
+Which then invokes the DIY Lambda function
+
+###
+Review step 8, Replace the lambdaFunction-practice with the labFunction-diy and click the check mark next 
+to the input box to save it and the DIY activity is complete
+###
+
+
+#APIinvokeURL
+https://audx42kn06.execute-api.us-east-1.amazonaws.com/prod/lab
+
+#PoolID
+us-east-1_Zak4ny12N
+
+#AppClientID
+bnflblmk3lteamgpgdd72ljqc
+
+#cognito Username
+teamturnersolutions

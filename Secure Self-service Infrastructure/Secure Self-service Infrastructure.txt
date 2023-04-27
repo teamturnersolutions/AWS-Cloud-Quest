@@ -1,0 +1,27 @@
+Secure Self-service Infrastructure
+-----------------------------------
+-Review the available product in the portfolio
+-Create a new product by using the provided cloudformation template
+-Create a new portfolio, Assign a product to the portfolio, and add users to the product
+-Use catalog user credentials to launch the "Base-Networking" product
+
+
+Secure Self-service Infrastructure DIY Activity
+------------------------------------------------
+-Deploy the tier 3 app product as a catalog user
+
+###
+Again, I over thought the lab and tried procedures out of bounds. This lab is extremely easy
+Simply add the stack name to a new version of the 3TierApp and then launch. Give each deployment
+sufficent time<10min>before proceeding on to the next step and then validation. Super simple
+###
+
+#SecretsValue
+7b&BO*$<-o]`ZNEf00gHI?@/W}vcTF*j
+#LoginURL
+
+#CloudFormationStackName
+SC-636656897582-pp-5ozxqw7bqjica
+#ProvisionedProductName
+-
+-Base-Networking

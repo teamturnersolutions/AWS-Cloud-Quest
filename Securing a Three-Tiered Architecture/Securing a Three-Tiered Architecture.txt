@@ -1,0 +1,25 @@
+Securing a Three-Tiered Architecture
+---------------------------------------
+-Examine an exisiting architecture to ensure functionality
+-Explore different methods of increasing security without breaking the system
+-Update the Network Access Control List for the database subnet
+-Update the application server security group to ensure that only traffic from the
+load balancer is allowed on port 80
+
+
+Securing a Three-Tiered Architecture DIY Activity
+---------------------------------------------------
+-Update the load balancer security group to restrict all inbound internet traffic to 
+only port 80
+-Update the load balancer security group to allow all inbound traffic from the App-SG
+
+
+
+#RDS LabStack Endpoint:port
+labstack-6a121405-7b95-4f15-90d8-databaseb269d8bb-2fouqzag7xbg.cluster-ckknu3elul1r
+.us-east-1.rds.amazonaws.com:3306
+
+#appSubnet1
+10.10.4.0/24
+#appSubnet2
+10.10.5.0/24

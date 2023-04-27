@@ -1,0 +1,38 @@
+Scenario:
+ A bank has several departments, each with it own operational databases. These databases use dfifferent technologies and do not 
+connect to each other, so each department can only see its own data. To promote a data-driven culture, The bank decided to export 
+data to these  operational databases  to a data lake on S3. The employees are now able to access data from all departments. And 
+the bank is able to extract insights from the data lake using Athena.
+
+
+Securing the Data Lake
+-----------------------
+-Create an AWS Glue crawler to ingest data into the data lake
+-Grant AWS IAM users permissions to access the ingested data
+-Create restrictions on sensititve data using AWS Lake Formations
+-Test the restrictiions by querying the data with Athena
+
+
+Securing the Data Lake DIY Activity
+-------------------------------------
+-Before procedding, please log out of the AWS console then click the open AWS console button at the top
+-Grant bank managers access to all data in the table
+
+###
+Extremely easy DIY, Just repeat steps. Noteworty lab overall. Very interesting concept that needs furthur exploration
+###
+#validation_form
+<bank_manager_user_name> / <database_name>
+
+
+#CF_LoginURL
+https://230291771281.signin.aws.amazon.com/console
+
+
+
+
+
+
+
+
+

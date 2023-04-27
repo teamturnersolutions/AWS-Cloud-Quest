@@ -1,0 +1,37 @@
+Securing Your Servers
+---------------------
+-Create an IAM policy and IAM role that will give the ERP application least privilege
+permissions
+-Attach the IAM role to the EC2 instance hosting the application
+-Test the new permissions by uploading an image file to the application
+-Test the lambda function by verifying that the contents of the file were written to a 
+DynamoDB table
+
+
+Securing Your Servers DIY Activity
+------------------------------------
+-Add the S3 DeleteObject permission to the 'ec2_app_policy' in IAM
+-Create a new IAM role
+-Attach the 'ec2_app_policy' to the role
+-Attach the newly created role to the Compliance-Server EC2 instance
+
+###
+Super easy DIY, Edit the 'ec2_policy_app' with S3 DeleteObject and create a new role then attach to Compliance server.
+###
+
+###
+Created Roles
+###
+
+#Lab_App_Role
+#ec2 IPv4 addr (app-server)
+54.226.22.124
+#S3 ARN
+arn:aws:s3:::corp-888748678182-535
+
+
+#Lab_Compliance_Role
+#ec2IPv4addr
+34.201.145.95
+#S3 ARN
+arn:aws:s3:::corp-888748678182-535
