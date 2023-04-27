@@ -1,0 +1,55 @@
+Templating Serverless Applications
+-------------------------------------
+-Create an AWS Cloud9 environment
+-Create an AWS SAM template with Amazon API Gateway and AWS Lambda
+-Inspect the AWS Cloudformation stack
+-Push an AWS SAM application to AWS CodeCommit
+
+
+Templating Serverless Applications DIY Activity
+-----------------------------------------------
+-Add an Amazon DynamoDB table to the AWS SAM template
+-Deploy the AWS SAM template
+-Push the updated AWS SAM application to AWS CodeCommit
+
+#validationForm
+(CloudformationStackName / CodeCommitRepositoryName)
+
+###
+Reconfigure the template.yaml, In the resources section add following snippet to end of the section:
+  MyDynamoDBTable:
+    Type: AWS::Serverless::SimpleTable
+    Properties:
+      TableName: SimpleTable
+Then proceed thru lab as directed
+###
+
+#CMD
+cd appfn
+#CMD
+aws codecommit create-repository --repository-name my-app
+#CMD
+git config --global credential.helper '!aws codecommit credential-helper $@'
+#CMD
+git config --global credential.UseHttpPath true
+#CMD
+git config --global init.defaultBranch main
+#CMD
+git init
+#CMD
+git add .
+#CMD
+git commit -m "first commit"
+#CMD
+git remote add origin https://git-codecommit.us-east-1.amazonaws.com/v1/repos/my-app
+#CMD
+git push -u origin main
+#CMD
+
+
+
+  MyDynamoDBTable:
+    Type: AWS::Serverless::SimpleTable
+    Properties:
+      TableName: SimpleTable
+

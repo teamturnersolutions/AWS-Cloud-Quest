@@ -1,0 +1,49 @@
+Tensorflow and Computer Vision
+-------------------------------
+-Import and review the CIFAR-10 dataset
+-Train your convolutional neural network (CNN) using a tensorflow network
+-Deploy the trained model to a real-time endpoint using Amazon Sagemaker hosting services
+-Review the model accuracy and test with a sample image
+
+
+
+Tensorflow and Computer Vision DIY Activity
+--------------------------------------------
+-Run the tensor_flow_DIY.ipynb notebook to identify sign langauge digits
+-Use an "ml.m5.xlarge" instance and run 10 epochs to train your model
+-Deploy the trained model to a real-time endpoint using Amazon Sagemaker hosting services
+
+###
+I had issue's going from the lab to DIY, Try logging out first of lab before trying to start DIY. Launch DIY with the same method and procedure as lab
+In Sagemaker Studio, Code Cell 10, Configure the proper S3 bucket, Continue on to Code Cell 20 and Configure the required instance type 'ml.m5.xlarge'
+and epochs '10'. Continue to the End. Get the newly created Endpoint Name and proceed to Validation
+###
+
+#DIY_Endpoint_Name
+tensorflow-inference-2022-11-21-21-46-03-448
+#S3_Bucket
+lab-data-bucket-561798030316-118
+#tensorflow_code.zip-S3_URL
+s3://lab-data-bucket-561798030316-118/tensorflow_code.zip
+
+#CMD
+sudo yum install unzip -y
+#CMD
+aws s3 ls
+#CMD
+aws s3 cp s3://lab-data-bucket-561798030316-118/tensorflow_code.zip .
+#CMD
+unzip tensorflow_code.zip
+#CMD
+
+
+
+
+
+
+
+
+
+
+
+

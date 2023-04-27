@@ -1,0 +1,25 @@
+{
+    "ResponseMetadata": {
+        "RequestId": "393a1bdb-5ea6-484e-8890-4a39466f687f",
+        "HTTPStatusCode": 200,
+        "HTTPHeaders": {
+            "x-amzn-requestid": "393a1bdb-5ea6-484e-8890-4a39466f687f",
+            "content-type": "application/json",
+            "content-length": "494",
+            "date": "Fri, 18 Nov 2022 07:28:42 GMT"
+        },
+        "RetryAttempts": 0
+    },
+    "SynthesisTask": {
+        "Engine": "neural",
+        "TaskId": "2b51968d-0b7b-4947-85e5-6f85de1fc3a6",
+        "TaskStatus": "scheduled",
+        "OutputUri": "https://s3.us-east-1.amazonaws.com/amazon-polly-bucket-230291771281/output/sample_file.txt.2b51968d-0b7b-4947-85e5-6f85de1fc3a6.mp3",
+        "CreationTime": "2022-11-18 07:28:43.039000+00:00",
+        "RequestCharacters": 440,
+        "OutputFormat": "mp3",
+        "TextType": "text",
+        "VoiceId": "Amy",
+        "LanguageCode": "en-GB"
+    }
+}

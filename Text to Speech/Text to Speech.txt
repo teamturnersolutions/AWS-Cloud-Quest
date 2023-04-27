@@ -1,0 +1,24 @@
+Text to Speech
+--------------
+-Use the Amazon Polly console to convert text to speech
+-Configure an S3 Event notification that will invoke a lambda function for PUT events
+-Update the AWS lambda function code to select a particular voice and langauge
+-Upload a sample file to the S3 bucket input folder to trigger an event notification invoking the lambda function
+-Validate that the sythensized voice file and the response JSON file are recieved in the S3 bucket output folder
+
+Text to Speech DIY Activity
+----------------------------
+-Update the AWS Lambda code to convert text to speech in a British english voice and upload the sample text file again
+-Validate that the polly_response.json file contains the updated lagauge code and voice id in the text to speech
+
+
+###
+In Lambda, Replace lab code on line 76 with name 82 langauge, Deploy. In S3, Re Upload sample file and download output for
+confirmation all is correct. Copy bucket name and move to Validation
+###
+
+
+
+
+
+

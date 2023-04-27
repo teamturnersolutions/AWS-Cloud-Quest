@@ -1,0 +1,40 @@
+Scenario:
+
+
+
+
+
+
+Triggers__Aggregating Data
+---------------------------
+-Activate Amazon DynamoDB Streams
+-Create a trigger to invoke an AWS Lambda function each time data is manipulated
+-Examine the Amazon Cloudwatch Logs for the output of the AWS Lambda function
+
+
+Triggers__Aggregating Data DIY Activity
+----------------------------------------
+-Create an Amazon DynamoDB total votes table with the correct name, Partition key, and Sort key
+-Configure the previous AWS Lambda function to update the new table with aggregated data from the votes table
+
+
+###
+Successful execution. Need to run again before documentation can be thorough
+###
+
+{
+ "id": "234",
+ "improvement": "MORE_TREES",
+ "region": "SOUTH"
+}
+
+
+
+
+
+
+
+
+
+
+
