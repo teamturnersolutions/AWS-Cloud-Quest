@@ -1,0 +1,84 @@
+Scenario:
+ City Hall has developed a ticketing system to manage citizen requests. Tickets include cases such as notifications of street damage, 
+burned out street lights, and even noisey establishments. Now, to plan better, City Hall wants to use SQL to obtain more insights from the requests
+such as the the most commonm problem areas
+
+Action Plan:
+ Create a copy of the DynamoDB table in your S3 data lake using a CTAS SQL query
+
+Federated Queries
+-------------------
+-Create and run a Glue crawler to create a Glue Data Catalog from data housed in DynamoDB 
+-Create and run an Glue ETL job to create a data lake in S3 from the already created Data Catalog
+-Create and run a query, Using Athena, To obtain insights to the imported data
+-Create and run a query, Using Athena directly against the DynamoDB database, With federated query access
+
+Federated Queries DIY Activity
+------------------------------
+-Create a copy of the DynamoDB table by using the 'create table as' (CTAS) command
+-The CTAS command should craete a file in your S3 datalake bucket within a new folder named 'newtable'
+
+
+###
+Have had significant trouble understanding exactly what they are looking for from user. Feel like this lab should have been super easy, But I am missing a component that has hindered my vaildation successfully. Recommened re-run of lab till clarity presents.
+Well this is a great example of 'Rookie Mistake' . I clearly need a ton more work in SQL but more importantly I overlooked a important configuration that led to failure from the begining. I used the labs external location 'Athena Bucket'  while it cleary states to use a different external location/ 'Data Lake'. After fixing that issue and tinkering with the SQL command validation was successful. Regardless of this success I need to work harder, Rookie shit is not tolerated
+###
+#validation_form
+<database_name> / <table_name>
+
+#FQN_source
+athena-federated-dynamodb.default.dynamodbtickettable
+#FQN_target
+AwsDataCatalog.glue_ticket_db.newtablename
+
+#DIYfailed_query
+CREATE TABLE AwsDataCatalog.glue_ticket_db.newtablename AS 
+SELECT * 
+FROM athena-federated-dynamodb2.default.dynamodbtickettable
+GROUP BY RequestType
+Order by 2 DESC;
+
+#DIY_Query_attempt(FAILED_ATTEMPT)
+CREATE TABLE AwsDataCatalog.glue_ticket_db.newtablename
+WITH (
+   external_location =
+   's3://data-lake-bucket-230291771281-us-east-1',
+   format = 'Parquet',
+   parquet_compression = 'SNAPPY'
+)
+AS SELECT *
+FROM athena-federated-dynamodb.default.dynamodbtickettable
+
+#DIY_Query_attempt(Successful Query)
+
+---Table_Creation---
+CREATE TABLE "AwsDataCatalog"."glue_ticket_db"."newtablename2" AS 
+SELECT * 
+FROM "athena-federated-dynamodb2"."default"."dynamodbtickettable";
+
+---Table_Query---
+SELECT RequestType, COUNT(* )
+FROM "AwsDataCatalog"."glue_ticket_db"."newtablename"
+GROUP BY RequestType
+Order by 2 DESC;
+
+---Table_Query---
+SELECT RequestType, COUNT(* )
+FROM "AwsDataCatalog"."glue_ticket_db"."newtablename2"
+GROUP BY RequestType
+Order by 2 DESC;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,51 @@
+Query Plan
+{
+  "0" : {
+    "plan" : {
+  "id" : "6",
+  "name" : "Output",
+  "identifier" : "[ticketnumber, phonenumber, city, prefix, emailaddress, requesttype, neighborhood, name]",
+  "details" : "",
+  "children" : [ {
+    "id" : "76",
+    "name" : "Limit",
+    "identifier" : "[10]",
+    "details" : "",
+    "children" : [ {
+      "id" : "133",
+      "name" : "LocalExchange",
+      "identifier" : "[SINGLE] ()",
+      "details" : "",
+      "children" : [ {
+        "id" : "112",
+        "name" : "RemoteSource",
+        "identifier" : "[1]",
+        "details" : "",
+        "children" : [ ],
+        "remoteSources" : [ "1" ]
+      } ],
+      "remoteSources" : [ ]
+    } ],
+    "remoteSources" : [ ]
+  } ],
+  "remoteSources" : [ ]
+}
+  },
+  "1" : {
+    "plan" : {
+  "id" : "111",
+  "name" : "LimitPartial",
+  "identifier" : "[10]",
+  "details" : "",
+  "children" : [ {
+    "id" : "0",
+    "name" : "TableScan",
+    "identifier" : "[new_table_name:LambdaTableHandle{tableName=TableName{schemaName=default, tableName=dynamodbtickettable}}]",
+    "details" : "LAYOUT: TableName{schemaName=default, tableName=dynamodbtickettable}\nrequesttype := LambdaColumnHandle{name='RequestType', type=varchar, comment='null'}\ncity := LambdaColumnHandle{name='City', type=varchar, comment='null'}\nprefix := LambdaColumnHandle{name='Prefix', type=varchar, comment='null'}\nname := LambdaColumnHandle{name='Name', type=varchar, comment='null'}\nphonenumber := LambdaColumnHandle{name='PhoneNumber', type=varchar, comment='null'}\nemailaddress := LambdaColumnHandle{name='EmailAddress', type=varchar, comment='null'}\nticketnumber := LambdaColumnHandle{name='TicketNumber', type=varchar, comment='null'}\nneighborhood := LambdaColumnHandle{name='Neighborhood', type=varchar, comment='null'}\n",
+    "children" : [ ],
+    "remoteSources" : [ ]
+  } ],
+  "remoteSources" : [ ]
+}
+  }
+}

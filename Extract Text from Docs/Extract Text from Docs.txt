@@ -1,0 +1,48 @@
+Extract Text from Docs
+-----------------------
+-Use the Amazon Textract service to extract form data from the sample image file
+-Configure an AWS Lambda function to make an API call to Amazon Textract, Then extract data from the sample image
+-Add an Amazon S3 event trigger to invoke the Lambda function for any PUT events that meet the criteria
+-Validate that the response JSON file recieved in the S3 bucket contains the expected results
+-Review the results in Cloudwatch Logs
+
+
+Extract Text from Docs DIY Activity
+------------------------------------
+-Update the AWS Lambda code to extract table data
+-Validate that the response recieved in Cloudwatch Logs contains table data
+
+###
+In Lambda, Line 58 'FeatureTypes=' needs to be switched to '['TABLES']' from '['FORMS']'. Line 85-90 needs to be uncommented. Run own investigation 
+to ensure its running correctly, Once confirmed proceed to Validation by providing S3 bucket name used.
+###
+#S3 Bucket
+amazon-textract-bucket-230291771281
+
+
+#Code added to LabFunction(@Line76)
+                    print("\nSearch Fields")
+                    key = "address"
+                    fields = page.form.searchFieldsByKey(key)
+                    for field in fields:
+                        print("Key: {}, Value: {}".format(field.key, field.value))
+
+
+#Code added for DIY (Which is located in the labFunction already but needs to be commented out)
+            for page in doc.pages:
+                print("\nTable details:")
+                for table in page.tables:
+                    for r, row in enumerate(table.rows):
+                        for c, cell in enumerate(row.cells):
+                            print("Table[{}][{}] = {}".format(r, c, cell.text))
+
+
+
+
+
+                        
+
+
+
+
+

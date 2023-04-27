@@ -1,0 +1,38 @@
+Scenario:
+ The management of an Electronics Toll collection company would like to consolidate the billing of the toll plaza'a in the data warehouse
+with the most up to date data.
+
+Event Driven Serverless ETL
+---------------------------
+-Configure S3 event notification to trigger Lambda function
+-Create a Glue Crawler to read a Schema from RedShift
+-Create a Glue ETL job to move data from S3 bucket to RedShift
+-Craete a Glue Workflow to crawl raw data from the S3 bucket and then use Glue job ETL
+-Query the data using the RedShift query editor
+
+
+Event Driven Serverless ETL DIY Activity
+-----------------------------------------
+-Enable the "Job Metrics" feature in the Glue job
+-Re-run the toll_plaza_application lambda function to generate transaction logs
+-Query the data using the RedShift query editor
+
+
+###
+Lab run has flaws, Successful validation though. Error report being composed and sent. Need to explore furthur to ensure either wasy will work
+###
+#validation_form
+<workflow_name> / <glue_job_name>
+
+#JDBC_URL
+jdbc:redshift://toll-cluster-636656897582-us-east-1.c63dqffdwzpn.us-east-1.redshift.amazonaws.com:5439/toll_db
+#Admin_password
+(WrlWOVLl?0!AjdQ8|4REha0c)a10J
+
+
+
+
+Event Driven Serverless ETL
+Issue with Step 53/54:
+ The instructions call for user to use 'Redshift-Crawler'. Subsequent illustration and instruction in the next step present the utlization of 'S3_Crawler' over the earlier instruction to use 'Redshift-Crawler' instead.
+Furthur exploration needed for clarification. 
