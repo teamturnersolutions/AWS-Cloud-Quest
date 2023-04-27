@@ -1,0 +1,15 @@
+Scenario:
+The city's marketing team wants separate Amazon VPCs for each department that also allows communication between the Amazon VPC's
+
+Connecting VPCs
+----------------
+-Configure VPC peering between the Marketing and finance VPCs
+
+
+Connecting VPCs DIY Activity
+-------------------------------
+-Configure VPC peering between the developer and finance VPCs
+
+###
+
+###

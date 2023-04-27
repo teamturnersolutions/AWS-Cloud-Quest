@@ -1,0 +1,18 @@
+Scenario:
+The school server that runs the scheduling solution needs more memory. Assist with veertically scailing thier Amazon EC2 instance
+
+Computing Solutions
+--------------------
+-Browse instance attributes
+-Learn about instance families
+-Connect to an instance and check logs
+-Start and stop an instance
+
+
+Computing Solutions DIY Activity
+----------------------------------
+-Change the EC2 instance type to a general purpose larger instance 'ml.m4.large'
+
+###
+
+###

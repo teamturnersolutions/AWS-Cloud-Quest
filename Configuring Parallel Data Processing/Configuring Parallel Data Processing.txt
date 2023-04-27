@@ -1,0 +1,55 @@
+Scenario:
+
+
+
+
+Configuring Parallel Data Processing
+------------------------
+-Create an Amazon SNS topic
+-Subscribe two AWS Lambda functions to the topic, One of then with a filter
+-Use the Amazon SNS console to send a message to the topic
+-Use Amazon Cloudwatch Logs Insights to visualize that the messages were delivered
+
+
+
+Configuring Parallel Data Processing DIY Activity
+---------------------------------------
+-Create a new AWS Lambda function (promotion_services) using the 'lambda_role_diy' IAM role
+-Configure this new AWS Lambda function to subscribe to the Amazon SNS topic you have created
+-Configure a filter to this subscription with the following criteria: {"distance":[{"numeric":[">", 10]}]}
+
+
+
+###
+The DIY, Is simple, Just a repeat of the lab with a little creative thinking. Use the existing Lambda functions as a template to create the new one.
+Then copy the ARN of the newly created lambda function. Navigate back to SNS, and subscribe the new function like the other functrions during the lab
+but with a different filter policy described in the details.
+###
+
+
+#SNSPubTest
+{
+ "customer_id": "customer01",
+ "distance": 10,
+ "coupon" : "3423-aadf-234",
+ "timestamp": "1595877319",
+ "cost": 3.99,
+ "return_area_id": "123"
+}
+
+{
+ "customer_id": "customer02",
+ "distance": 10,
+ "coupon" : "3423-discount-01",
+ "timestamp": "1595877319",
+ "cost": 32.90,
+ "return_area_id": "123"
+}
+#LambdaCouponARN
+arn:aws:lambda:us-east-1:636656897582:function:coupon_service
+
+
+
+
+
+
