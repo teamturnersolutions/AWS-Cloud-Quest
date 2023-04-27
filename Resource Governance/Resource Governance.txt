@@ -1,0 +1,16 @@
+Resource Governance
+--------------------------
+
+Enable an AWS Config managed rule to enforce tag configuration for Amazon EC2.
+Enable an AWS Config managed rule to enforce encryption and versioning
+configuration for Anazon S3 Bucket
+
+
+
+Resource Governance DIY Activity
+----------------------------------
+Add an additional rule to verify that your S3 bucket has versioning enabled
+(s3-bucket-versioning-enabled)
+
+
+#bucket name

@@ -1,0 +1,6 @@
+Student: Li Juan
+
+Semester 1: 
+- AWS Cloud Quest 101
+- AWS CDK Best Practices
+- Cloud Cost Optimization

@@ -1,0 +1,13 @@
+S3 Security
+------------
+-Enable versioning on an Amazon S3 bucket
+-Configure server-side encryption on uploaded objects
+-Configure server access logging on the bucket
+
+
+S3 Security DIY Activity
+-------------------------
+-Configure replication to another S3 bucket
+-Upload a DIY_Courses.txt file to the bucket source bucket
+-Verify that the replication rule is properly configured to copy from the source
+to the destination bucket

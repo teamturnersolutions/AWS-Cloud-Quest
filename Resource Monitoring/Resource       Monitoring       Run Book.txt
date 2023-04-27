@@ -1,0 +1,12 @@
+Resource Monitoring
+-------------------------
+Help the power plant team monitor their systems and automate notifications and actions 
+based on collected metrics.
+
+
+Action Plan
+--------------
+Use Amazon CloudWatch to monitor Amazon EC2 instances, create a dashboard, 
+and configore  alarms based on CPU and memory utilization. Add an action 
+to email for high CPU and to reboot the high memory instance if the alarm 
+is triggered.

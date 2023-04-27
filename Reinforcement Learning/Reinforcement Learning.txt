@@ -1,0 +1,51 @@
+Reinforcement Learning
+-----------------------
+-Use Amazon Sagemaker Studio to import the code base required for the lab
+-Update the preset parameters that define the training task
+-Use RLEstimator to train the model to play tic-tac-toe
+-Deploy the trained model to an Amazon Sagemaker endpoint
+-Play the tic-tac-toe game and validate agent response
+
+
+
+Reinforcement Learning DIY Activity
+-------------------------------------
+-Update the preset parameters to improve_steps = 20000 
+and steps_between_evaluation_periods = 1000
+-Retrain your model
+-Use an ml.m5.xlarge instance type to deploy your model to an Amazon Sagemaker endpoint
+
+###
+Run the DIY as you did the lab, But the parameters in Step 14 need to be set given discription below. Dont forget to insert your S3 bucket into Code cell 1 and Reconfigure Code Cell 10 with the new instance type 'ml.m5.xlarge'
+'schedule_params.improve_steps = TrainingSteps(20000)'
+'schedule_params.steps_between_evaluation_periods = EnvironmentSteps(1000)
+For Validation you will need 'Lab_Bucket'and'Endpoint_Name'
+###
+#S3_Lab_bucket
+lab-data-bucket-764279729716-326
+#rl_code.zip-S3_URL
+s3://lab-data-bucket-764279729716-326/rl_code.zip
+
+#CMD
+sudo yum install -y unzip
+#CMD
+aws s3 cp s3://lab-data-bucket-764279729716-326/rl_code.zip .
+#CMD
+unzip rl_code.zip
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

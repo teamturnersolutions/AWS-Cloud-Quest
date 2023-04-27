@@ -1,0 +1,11 @@
+Student: Mateo Jackson
+
+Semester 1:
+- History of Cloud Computing
+- Programming in Python
+- Time Management
+
+Semester 2:
+-Step it up
+-Step it up harder
+-AWS Hero
