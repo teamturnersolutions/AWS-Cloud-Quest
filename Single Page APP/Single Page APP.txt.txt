@@ -1,0 +1,14 @@
+Single Page APP
+-----------------
+-Configure Amazon S3 to host a single page application
+-Locate the Amazon API Gateway invoke URL
+-Troubleshoot resource connections from Amazon API Gateway
+-Troubleshoot an AWS Lambda function using Amazon Cloudwatch logs
+
+Single Page APP DIY Activity
+-----------------------------
+-Troubleshoot the AWS Lambda function using Amazon Cloudwatch Logs
+-Ensure the details button in the Vehicle APP is returning vehivle details.
+
+#API invoke URL
+https://b2uu2dj13a.execute-api.us-east-1.amazonaws.com/prod

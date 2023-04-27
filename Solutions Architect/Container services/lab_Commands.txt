@@ -1,0 +1,58 @@
+Container Services
+----------------------
+Help the city's premier medical rsearch center 
+containerize and deploy thier applications in 
+the cloud.
+
+
+#Container application_Runbook
+-----------------------------------------------------------------------------
+unzip lab_code.zip
+
+
+
+./install_scripts/install_docker.sh
+
+
+
+region=$(aws configure get region)
+region=${region:-us-east-1}
+repo_name="my_app"
+account=$(aws sts get-caller-identity --query Account --output text)
+fullname="${account}.dkr.ecr.${region}.amazonaws.com/${repo_name}:latest"
+
+
+
+aws ecr create-repository --repository-name "${repo_name}"
+aws ecr get-login-password --region ${region} |docker login --username AWS --password-stdin ${fullname}
+
+
+
+cd ~/enviroment/first_app
+
+docker build -t ${repo_name} .
+
+docker images --filter reference=my_app
+
+docker tag ${repo_name} ${fullname}
+
+docker push ${fullname}
+
+cd ~/environment/install_scripts/
+
+./push_second_app.sh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

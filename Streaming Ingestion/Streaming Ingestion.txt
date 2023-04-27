@@ -1,0 +1,56 @@
+Scenario:
+
+
+Streaming Ingestion
+--------------------
+-Use Amazon Kinesis Data Firehose to ingest data directly to your data lake
+-Call Amazon Athena to query data in near real-time using a Python SDK
+
+
+Streaming Ingestion DIY Activity
+---------------------------------
+-Update the Amazon Kinesis Data Firehose delivery stream to include minute as a partitition key (Step 9/10) <https://aws.amazon.com/blogs/big-data/kinesis-data-firehose-now-supports-dynamic-partitioning-to-amazon-s3/>
+
+#validation_form
+<kinesis_delivery_stream_name>
+###
+Interesting build, I went through it about a half dozen times, ALL FAILURE, During an initial stage i missed a period in the JQ expression'.station_id'
+Glad I pushed through, I have a very clear understanding and comprehension of this architecture now.Though it is still MISSION FAILURE
+Unknown Issue Persisting. Recommend Step Back procedure(re-analyze, re-focus then exe)
+Took a day, Executed with prior knowledge and passed validation the first shot. I dont know exactly what I did wrong last time but it passed 
+###
+
+#Kinesis_Delivery_Stream_JQ_Expression
+------------
+station_id
+------------
+year
+.event_timestamp| strftime("%Y")
+------------
+month
+.event_timestamp| strftime("%m")
+------------
+day
+.event_timestamp| strftime("%d")
+------------
+hour
+.event_timestamp| strftime("%H")
+------------
+minute
+.event_timestamp| strftime("%M")
+
+#Dynamic_Partition_keys
+station-data/station_id=!(partitionKeyFromQuery:station_id)/!(partitionKeyFromQuery:year)/!(partitionKeyFromQuery:month)/!
+(partitionKeyFromQuery:day)/!(partitionKeyFromQuery:hour)/!(partitionKeyFromQuery:minute)/
+
+
+
+
+
+
+
+
+
+
+
+

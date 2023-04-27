@@ -1,0 +1,37 @@
+Speech to Text
+---------------
+-Use the Amazon Transcribe artifical intelligence (AI) service to translate audio files to text
+-Configure AWS Lambda to make an API call to Amazon Transcribe to convert audio files to text
+-Configure Amazon S3 and add an event notification feature to trigger the lambda function for a PUT event
+-Validate the response JSON file recieved in the S3 bucket has the expected results
+
+
+Speech to Text DIY Activity
+----------------------------
+-Update AWS Lambda code to convert audio files with the WAV format
+-Upload the sample WAV audio file (sample_transcribe_3.wav) into the s3 bucket
+-Validate the response JSON file recieved in the S3 bucket contains the converted text
+
+###
+In Lambda, Reconfigure the S3 Trigger with the 'wav' file format, Then reconfigure the lambda function code
+@Line57 with the same file format (MediaFormat='wav'), Ensure that newly configured code has been deployed. 
+In S3, Naviagte to the input file with the lab bucket and upload 'sample_transcribe_3.wav'. In Transcribe,
+Navigate to 'Transcription jobs' and await the job to be completed. Return to S3, Navigate to the output file
+and ensure that the new file is there. Copy the bucket name to a text editor and proceed to Validation.
+###
+
+
+#s3Bucket
+amazon-transcribe-bucket-636656897582
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,38 @@
+Spy Drones Detection
+--------------------
+-Download and walk-through a Jupyter Notebook stored in Amazon S3
+-Train and evaluate the xgboost supervised learning algorithm
+-Deploy a Sagemaker inference endpoint and test it using an AWS Lambda Function
+
+
+
+Spy Drones Detection DIY Activity
+---------------------------------
+-Repeat the lab using a different data set (DroneFlights.csv)
+-Deploy a new Amazon Sagemaker inference endpoint
+-Reconfigure the AWS Lambda function and test the new endpoint using the provided text data
+
+###
+###
+
+#S3URL-xgboost
+s3://spy-drones-lab-561798030316/xgboost_island_detect_spy_drones.ipynb
+#Endpoint
+xgboost-2022-11-21-12-13-14-827
+#DIY_Endpoint
+xgboost-2022-11-21-12-48-32-340
+#CMD
+aws s3 cp s3://spy-drones-lab-561798030316/xgboost_island_detect_spy_drones.ipynb
+
+
+
+
+
+
+
+
+
+
+
+
+
