@@ -1,0 +1,48 @@
+Bring Your Own Model_BYOM
+--------------------------
+-Create a docker image of sample model code using sagemaker studio
+-Save the image in Amazon ECR
+-Use the saved image to create a trained model using sample data sets
+-Deploy the trained model to an Amazon sagemaker inference endpoint
+-Use AWS Lambda to invoke the inference endpoint using test data and validate the results
+
+
+
+Bring Your Own Model_BYOM DIY Activity
+---------------------------------------
+-Create a new inference endpoint using an instance type 'ml.m5.large'(Code_Cell#14)
+-Update AWS Lambda environment variable and test your newly deployed endpoint
+
+
+###
+Run DIY the same as the lab, Just Reconfigure for a differnet instance type, Code cell 14 Then newly created endpoint name for validation.
+(Code cell 3)
+(Code cell 9)
+###
+
+
+#S3_Bucket
+lab-data-bucket-764279729716
+#URI
+s3://lab-data-bucket-764279729716/byom_code.zip
+#Endpoint
+sagemaker-linear-regression-2022-11-23-01-48-40-619
+
+
+#CMD
+sudo yum install unzip -y
+#CMD
+aws s3 cp s3://lab-data-bucket-764279729716/byom_code.zip .
+#CMD
+unzip byom_code.zip 
+
+
+
+
+
+
+
+
+
+
+

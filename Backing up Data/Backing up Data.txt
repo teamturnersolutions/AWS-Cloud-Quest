@@ -1,0 +1,23 @@
+Scenario:
+ Help the Pup-World company craete backup plans for different applications.
+
+Action Plan:
+ Help the company centralize and automate data protection across AWS services using AWS Backup. 
+
+Backing up Data
+-----------------------
+-Create a custom vault
+-Configure an on-demand backup of EBS volumes with a resource ID
+-Create automated backup plans for EC2 attached EBS volumes using tags
+
+Backing up Data DIY Activity
+----------------------------------------
+-Configure an AWS Backup plan for an Aurora Serverless cluster using the default value and backup frequency of 12 hours for saving the backups
+-Assign Aurora Serverless cluster as a resource using the tag "Backup-DIY" = True
+
+###
+
+###
+
+#validation_form
+<Backup plan ID>
