@@ -1,0 +1,25 @@
+Image and Video Analysis
+--------------------------
+-Use Amazon Rekognition Label Detection to identify and label objects in a sample image
+-Configure an AWS Lambda function to invoke Amazon Rekognition for detecting and labeling objects in an image
+-Configure S3 by adding an event notification to iknvoke the lambda function for PUT event of new objects
+-Validate that the recieved response JSON file in the S3 bucket has the expected results
+
+
+Image and Video Analysis DIY Activity
+---------------------------------------
+-Update AWS Lambda code to detect a new label (spaceship)
+-Upload the sample spaceship image (spaceship.png) into the S3 bucket
+-Validate that the response JSON file recieved in the S3 bucket contains spaceship as a label
+
+###
+-In Lambda,Replace a piece of code on line 21 in our lambda function to identify 'spaceship' instead of 'airplane', Dont forget to deploy
+that change for the save to take effect. In S3, Go back to the labBucket and upload 'spaceship into the input/ file,
+Then navigate to the output/ file and download the response JSON to confirm that 'spaceship' was correctly 
+identified. Copy the bucket name and proceed to Validation.
+###
+
+
+
+
+

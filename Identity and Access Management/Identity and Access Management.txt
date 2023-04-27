@@ -1,0 +1,33 @@
+Identity and Access Management
+-----------------------------------
+-Create an IAM Policy document
+-Assign users to IAM user groups
+-Assign policies to IAM user groups
+-Generate IAM access keys and configure the AWS CLI
+
+
+
+Identity and Access Management DIY Activity
+-----------------------------------------------
+-Disable the AWS management console access for fnuser1
+-Connect to Labinstance by usikng Amazon EC2 Instance Connect
+-Upload the Zazzy.png file to the fnuser1 folder in Amazon s3
+by using the AWS CLI
+
+
+
+
+#BucketURL
+https://s3.console.aws.amazon.com/s3/buckets/corp-343374970437-391?region=us-east-1
+#BucketName
+corp-343374970437-391
+#AcctID
+343374970437
+
+#AccessKeyID
+AKIAU74V6HZC7RF2VX3I
+#Secret Access Key
+Pn11C1Y6qpTExvZS8BZTb1DraC66V7KZc+RGkKIP
+
+https://s3.console.aws.amazon.com/s3/buckets/corp-343374970437-391?region=us-east-1&prefix=fnuser1/&showversions=false
+aws s3 cp Zazzy.png s3://corp-343374970437-391

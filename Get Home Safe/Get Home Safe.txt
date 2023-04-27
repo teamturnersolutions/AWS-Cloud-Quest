@@ -1,0 +1,71 @@
+Get Home Safe
+--------------
+-Use Amazon Sagemaker Studio to import the code base required for the lab
+-Review the preset parameters and then define the training task
+-Use Amazon Sagemaker RL framework to train ther model to solve the MountainCar problem
+-Deploy the trained model to a endpoint
+-Test the endpoint with sample data then review the action recieved by the endpoint
+
+
+Get Home Safe DIY Activity
+---------------------------
+-Change the Hyperparameter settings to 
+	'learning rate= 0.005'
+	'epochs = 10'
+-Re-run the traing model
+-Create a new inference endpoint with instance type ='ml.m5.large'
+-Test the endpoint and validate the result
+
+###
+Run DIY the same as the lab with a small reconfuguration
+(Code cell 8)
+	epochs = 10
+	learning_rate = 0.005
+(Code cell 14)
+	instance_type = "ml.m5.large"
+
+###
+
+
+#S3_Bucket_Name
+get-home-safe-561798030316-275
+#get_home_safe.zip_URI
+s3://get-home-safe-561798030316-275/get_home_safe.zip
+
+#CMD
+sudo yum install unzip -y
+#CMD
+aws s3 cp s3://get-home-safe-561798030316-275/get_home_safe.zip .
+#CMD
+unzip get_home_safe.zip
+#CMD
+
+#Code_Cell_14
+ml.m5.xlarge
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

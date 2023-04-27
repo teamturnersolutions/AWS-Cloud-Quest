@@ -1,0 +1,68 @@
+{
+    "Status": "Success! spaceship found",
+    "body": [
+        [
+            {
+                "Name": "Spaceship",
+                "Confidence": 99.84410858154297,
+                "Instances": [],
+                "Parents": [
+                    {
+                        "Name": "Aircraft"
+                    },
+                    {
+                        "Name": "Transportation"
+                    },
+                    {
+                        "Name": "Vehicle"
+                    }
+                ]
+            },
+            {
+                "Name": "Aircraft",
+                "Confidence": 99.84410858154297,
+                "Instances": [],
+                "Parents": [
+                    {
+                        "Name": "Transportation"
+                    },
+                    {
+                        "Name": "Vehicle"
+                    }
+                ]
+            },
+            {
+                "Name": "Vehicle",
+                "Confidence": 99.84410858154297,
+                "Instances": [],
+                "Parents": [
+                    {
+                        "Name": "Transportation"
+                    }
+                ]
+            },
+            {
+                "Name": "Transportation",
+                "Confidence": 99.84410858154297,
+                "Instances": [],
+                "Parents": []
+            },
+            {
+                "Name": "CAD Diagram",
+                "Confidence": 83.76188659667969,
+                "Instances": [],
+                "Parents": [
+                    {
+                        "Name": "Diagram"
+                    }
+                ]
+            },
+            {
+                "Name": "Diagram",
+                "Confidence": 83.76188659667969,
+                "Instances": [],
+                "Parents": []
+            }
+        ]
+    ]
+}

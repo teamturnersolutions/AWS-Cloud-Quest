@@ -1,0 +1,36 @@
+Case://Incident_Response
+Job://A fast food security analyst wants to automate EC2 instance isolation in order to respond to security events in a timely manner.
+
+
+Incident Response
+-----------------
+-Install the Amazon CloudWatch agent on an Amazon EC2 instance.
+-Configure the Amazon CloudWatch agent to ingest application logs. 
+-Integrate Amazon SNS. Amazon Cloud watch Logs and Alarms and Lambda to automate the
+isolation on an EC2 resource that may have been comprimised by a hacker
+
+
+
+Incident Response DIY Activity
+-------------------------------
+-Create an Amazon SNS subscription to email a notification when an alarm is triggered
+(Implement DIY in Step 59)
+
+Solution Validation Method
+---------------------------
+Test service will confirm that a valid email has been subscribed and confirmed to the same SNS topic that was used during the practice section, The SNS topic
+should also have a valid AWS Lambda function subscription.
+
+###
+This DIY activity is super easy,The lab itself is very "step" intensive but the activity simply piggy backs off that work. Go to SNS and Subscribe to a subscription
+and then route that to your email in which you must confirm. Once those couple steps are complete proceed to Validation.
+###
+
+
+
+#Step24 CMD
+sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -m ec2 -a status
+#Step25 CMD
+sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-config-wizard
+#Step30 CMD
+sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -a fetch-config -s -m ec2 -c file:/opt/aws/amazon-cloudwatch-agent/bin/config.json
