@@ -22,12 +22,12 @@ https://s3.console.aws.amazon.com/s3/buckets/corp-343374970437-391?region=us-eas
 #BucketName
 corp-343374970437-391
 #AcctID
-343374970437
+
 
 #AccessKeyID
-AKIAU74V6HZC7RF2VX3I
+
 #Secret Access Key
-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
+
 
 https://s3.console.aws.amazon.com/s3/buckets/corp-343374970437-391?region=us-east-1&prefix=fnuser1/&showversions=false
 aws s3 cp Zazzy.png s3://corp-343374970437-391
