@@ -15,7 +15,7 @@ session = boto3.Session()
 dynamodb = session.resource("dynamodb")
 
 ###Lab Note: Change below to the new table name created for the DIY section.
-table_name = "vehicle"
+table_name = "locations"
 
 table = dynamodb.Table(table_name)
 
